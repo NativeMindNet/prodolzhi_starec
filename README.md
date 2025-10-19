@@ -1,69 +1,223 @@
 <div align="center">
 
-![Continue logo](media/readme.png)
+![Логотип Продолжи, старец!](media/readme.png)
 
 </div>
 
-<h1 align="center">Continue</h1>
+<h1 align="center">Продолжи, старец! 🙏</h1>
 
 <div align="center">
 
-<a target="_blank" href="https://opensource.org/licenses/Apache-2.0" style="background:none">
-    <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" style="height: 22px;" />
+<a target="_blank" href="LICENSE" style="background:none">
+    <img src="https://img.shields.io/badge/Лицензия-NativeMindNONC-red.svg" style="height: 22px;" />
 </a>
-<a target="_blank" href="https://docs.continue.dev" style="background:none">
-    <img src="https://img.shields.io/badge/Continue-docs-%23BE1B55.svg?logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNCIgZmlsbD0id2hpdGUiPgogIDxwYXRoIGQ9Ik0yMC41Mjg2IDMuMjY4MTFMMTkuMTUxMiA1LjY1Njk0TDIyLjYzMjggMTEuNjg0OUMyMi42NTgyIDExLjczMDYgMjIuNjczNSAxMS43ODY2IDIyLjY3MzUgMTEuODM3NEMyMi42NzM1IDExLjg4ODIgMjIuNjU4MiAxMS45NDQxIDIyLjYzMjggMTEuOTg5OUwxOS4xNTEyIDE4LjAyMjlMMjAuNTI4NiAyMC40MTE3TDI1LjQ3OTEgMTEuODM3NEwyMC41Mjg2IDMuMjYzMDNWMy4yNjgxMVpNMTguNjE3NiA1LjM0NjlMMTkuOTk1IDIuOTU4MDdIMTcuMjQwMkwxNS44NjI4IDUuMzQ2OUgxOC42MjI3SDE4LjYxNzZaTTE1Ljg1NzcgNS45NjY5N0wxOS4wNzUgMTEuNTMyNEgyMS44Mjk4TDE4LjYxNzYgNS45NjY5N0gxNS44NTc3Wk0xOC42MTc2IDE3LjcxNzlMMjEuODI5OCAxMi4xNDc0SDE5LjA3NUwxNS44NTc3IDE3LjcxNzlIMTguNjE3NlpNMTUuODU3NyAxOC4zMzhMMTcuMjM1MSAyMC43MTY3SDE5Ljk4OTlMMTguNjEyNSAxOC4zMzhIMTUuODUyNkgxNS44NTc3Wk02LjUyMDk4IDIxLjMwNjNDNi40NjUwNyAyMS4zMDYzIDYuNDE0MjQgMjEuMjkxIDYuMzY4NSAyMS4yNjU2QzYuMzIyNzYgMjEuMjQwMiA2LjI4MjA5IDIxLjE5OTUgNi4yNTY2OCAyMS4xNTM4TDIuNzcwMDIgMTUuMTIwN0gwLjAxNTI0ODJMNC45NjU3IDIzLjY5SDE0Ljg2MTVMMTMuNDg0MSAyMS4zMDYzSDYuNTI2MDZINi41MjA5OFpNMTQuMDE3OCAyMC45OTYyTDE1LjM5NTIgMjMuMzhMMTYuNzcyNiAyMC45OTExTDE1LjM5NTIgMTguNjAyM0wxNC4wMTc4IDIwLjk5MTFWMjAuOTk2MlpNMTQuODYxNSAxOC4yOTc0SDguNDM3MTJMNy4wNTk3MyAyMC42ODYySDEzLjQ4NDFMMTQuODYxNSAxOC4yOTc0Wk03Ljg5ODM2IDE3Ljk5MjRMNC42ODEwOCAxMi40MjE5TDMuMzAzNjkgMTQuODEwN0w2LjUyMDk4IDIwLjM4MTJMNy44OTgzNiAxNy45OTI0Wk0wLjAxMDE2NTQgMTQuNTAwN0gyLjc2NDk0TDQuMTQyMzIgMTIuMTExOEgxLjM5MjYzTDAuMDEwMTY1NCAxNC41MDA3Wk02LjI0MTQzIDIuNTQxM0M2LjI2Njg1IDIuNDk1NTYgNi4zMDc1MSAyLjQ1NDkgNi4zNTMyNSAyLjQyOTQ4QzYuMzk5IDIuNDA0MDcgNi40NTQ5IDIuMzg4ODIgNi41MDU3MyAyLjM4ODgySDEzLjQ3NEwxNC44NTE0IDBINC45NTA0NUwwIDguNTc0MzVIMi43NTQ3N0w2LjIzMTI3IDIuNTQ2MzhMNi4yNDE0MyAyLjU0MTNaTTQuMTQyMzIgMTEuNTc4MkwyLjc2NDk0IDkuMTg5MzRIMC4wMTAxNjU0TDEuMzg3NTUgMTEuNTc4Mkg0LjE0MjMyWk02LjUxMDgxIDMuMzEzODZMMy4yOTg2MSA4Ljg3OTNMNC42NzU5OSAxMS4yNjgxTDcuODg4MiA1LjcwMjY4TDYuNTEwODEgMy4zMTM4NlpNMTMuNDc5MSAzLjAwMzgySDcuMDQ0NDhMOC40MjE4NyA1LjM5MjY0SDE0Ljg1NjRMMTMuNDc5MSAzLjAwMzgyWk0xNS4zOTUyIDUuMDgyNkwxNi43Njc1IDIuNjk4ODZMMTUuMzk1MiAwLjMxMDAzOEwxNC4wMTc4IDIuNjkzNzhMMTUuMzk1MiA1LjA4MjZaIi8+Cjwvc3ZnPg==" style="height: 22px;" />
+<a target="_blank" href="ПРАВИЛО.md" style="background:none">
+    <img src="https://img.shields.io/badge/Правило-Ребрендинга-orange.svg" style="height: 22px;" />
 </a>
-<a target="_blank" href="https://changelog.continue.dev" style="background:none">
-    <img src="https://img.shields.io/badge/changelog-%96EFF3" style="height: 22px;" />
-</a>
-<a target="_blank" href="https://discord.gg/vapESyrFmJ" style="background:none">
-    <img src="https://img.shields.io/badge/discord-join-continue.svg?labelColor=191937&color=6F6FF7&logo=discord" style="height: 22px;" />
+<a target="_blank" href="docs" style="background:none">
+    <img src="https://img.shields.io/badge/Документация-Русский-blue.svg" style="height: 22px;" />
 </a>
 
 <p></p>
 
 <div align="center">
 
-**Ship faster with Continuous AI**
+**Разрабатывайте быстрее с Непрерывным ИИ**
 
-**Build and run custom agents across your IDE, terminal, and CI**
+**Создавайте и запускайте пользовательских агентов в вашей IDE, терминале и CI**
 
 </div>
 
-Get started in [VS Code](https://marketplace.visualstudio.com/items?itemName=Continue.continue), [JetBrains](https://plugins.jetbrains.com/plugin/22707-continue-extension), or [CLI](https://docs.continue.dev/guides/cli)
+Поддерживаемые языки: 🇷🇺 Русский | 🇹🇭 ไทย
 
-## Agent
+## 🧙‍♂️ О проекте
 
-[Agent](https://docs.continue.dev/ide-extensions/agent/quick-start) to work on development tasks together with AI
+"Продолжи, старец!" - это локализованная русско-тайская версия AI-ассистента для разработчиков, объединяющая восточную мудрость с современными технологиями искусственного интеллекта.
+
+### Философия
+
+Проект воплощает принципы:
+- **Мудрости** - осмысленное использование AI
+- **Преемственности** - продолжение лучших практик
+- **Простоты** - понятный интерфейс
+- **Уважения** - к культурам России 🇷🇺 и Таиланда 🇹🇭
+
+## 🚀 Возможности
+
+### Агент
+
+[Агент](docs) работает над задачами разработки вместе с AI
 
 ![agent](docs/images/agent.gif)
 
-## Chat
+### Чат
 
-[Chat](https://docs.continue.dev/ide-extensions/chat/quick-start) to ask general questions and clarify code sections
+[Чат](docs) для общих вопросов и уточнения секций кода
 
 ![chat](docs/images/chat.gif)
 
-## Edit
+### Редактирование
 
-[Edit](https://docs.continue.dev/ide-extensions/edit/quick-start) to modify a code section without leaving your current file
+[Редактирование](docs) для изменения секций кода без выхода из текущего файла
 
 ![edit](docs/images/edit.gif)
 
-## Autocomplete
+### Автодополнение
 
-[Autocomplete](https://docs.continue.dev/ide-extensions/autocomplete/quick-start) to receive inline code suggestions as you type
+[Автодополнение](docs) для получения встроенных предложений кода во время набора
 
 ![autocomplete](docs/images/autocomplete.gif)
 
 </div>
 
-## Contributing
+## 📦 Установка
 
-Read the [contributing guide](https://github.com/continuedev/continue/blob/main/CONTRIBUTING.md), and
-join [#contribute on Discord](https://discord.gg/vapESyrFmJ).
+### VS Code
 
-## License
+```bash
+# Скачайте расширение из релизов
+code --install-extension prodolzhi-starets.vsix
+```
 
-[Apache 2.0 © 2023-2024 Continue Dev, Inc.](./LICENSE)
+### JetBrains
+
+```bash
+# Установите плагин из файла
+```
+
+### CLI
+
+```bash
+npm install -g prodolzhi-starets
+```
+
+## 🌍 Языковая поддержка
+
+Интерфейс доступен на двух языках:
+
+- 🦅 **Русский язык** (Российский Двухглавый Орёл)
+- ครุฑ **ภาษาไทย** (Тайский Гаруда)
+
+Переключение языка осуществляется через визуальные символы в правом верхнем углу интерфейса.
+
+## ⚙️ Конфигурация
+
+Создайте файл `.prodolzhi-starets/config.yaml` в корне вашего проекта:
+
+```yaml
+models:
+  default: "mozgach108"
+  chat: "mozgach108"
+  autocomplete: "mozgach108-mini"
+
+language: "ru" # или "th" для тайского
+
+theme:
+  elder: true
+  colors:
+    primary: "#FFD700"
+    accent: "#8B0000"
+    background: "#1a1f36"
+```
+
+## 🙏 Вклад в проект
+
+Мы приветствуем вклад от сообщества! Пожалуйста, ознакомьтесь с [руководством по участию](CONTRIBUTING.md).
+
+### Требования к вкладу
+
+- Весь код должен быть документирован на русском или тайском языке
+- Следуйте принципам, изложенным в [ПРАВИЛО.md](ПРАВИЛО.md)
+- Уважайте культурные особенности обеих стран
+
+## 📄 Лицензия
+
+[NativeMindNONC © 2025 NativeMind](./LICENSE)
+
+**Некоммерческая лицензия**. Коммерческое использование запрещено без письменного разрешения.
+
+## 🔗 Связь
+
+- Telegram: [Канал проекта]
+- Email: contact@nativemind.net
+- GitHub: [Репозиторий проекта]
+
+## 🌟 Благодарности
+
+Проект основан на Continue.dev (Apache 2.0) с полной локализацией и ребрендингом для русско-тайской аудитории.
+
+Особая благодарность:
+- Сообществу разработчиков России 🇷🇺
+- Сообществу разработчиков Таиланда 🇹🇭
+- Всем, кто вносит вклад в развитие AI-технологий
+
+---
+
+<div align="center">
+
+**Да пребудет с вами мудрость старца! 🙏**
+
+**ขอให้ปัญญาของพ่อแก่สถิตอยู่กับท่าน! 🙏**
+
+---
+
+<div align="center">
+
+## ภาษาไทย
+
+# ดำเนินต่อไปเถิด พ่อแก่! 🙏
+
+**พัฒนาเร็วขึ้นด้วย AI อย่างต่อเนื่อง**
+
+**สร้างและรันเอเจนต์แบบกำหนดเองใน IDE เทอร์มินัล และ CI ของคุณ**
+
+## เกี่ยวกับโครงการ
+
+"ดำเนินต่อไปเถิด พ่อแก่!" เป็นผู้ช่วย AI สำหรับนักพัฒนาที่แปลเป็นภาษารัสเซียและไทย โดยผสมผสานภูมิปัญญาตะวันออกกับเทคโนโลยี AI สมัยใหม่
+
+## ความสามารถ
+
+### ตัวแทน (Agent)
+ทำงานร่วมกับ AI ในงานพัฒนาต่างๆ
+
+### แชท (Chat)
+สอบถามคำถามทั่วไปและอธิบายส่วนของโค้ด
+
+### แก้ไข (Edit)
+แก้ไขส่วนของโค้ดโดยไม่ต้องออกจากไฟล์ปัจจุบัน
+
+### เติมอัตโนมัติ (Autocomplete)
+รับคำแนะนำโค้ดแบบอินไลน์ขณะพิมพ์
+
+## การติดตั้ง
+
+ดาวน์โหลดส่วนขยายสำหรับ VS Code หรือ JetBrains จากหน้า releases
+
+## การสนับสนุนภาษา
+
+อินเทอร์เฟซรองรับสองภาษา:
+
+- 🦅 **ภาษารัสเซีย** (นกอินทรีสองหัวแห่งรัสเซีย)
+- ครุฑ **ภาษาไทย** (ครุฑไทย)
+
+## การมีส่วนร่วม
+
+เรายินดีรับการมีส่วนร่วมจากชุมชน! โปรดอ่าน[คู่มือการมีส่วนร่วม](CONTRIBUTING.md)
+
+## ใบอนุญาต
+
+[NativeMindNONC © 2025 NativeMind](./LICENSE)
+
+**ใบอนุญาตไม่ใช่เชิงพาณิชย์** ห้ามใช้เชิงพาณิชย์โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษร
+
+---
+
+**ขอให้ปัญญาของพ่อแก่สถิตอยู่กับท่าน! 🙏**
+
+**Да пребудет с вами мудрость старца! 🙏**
+
+</div>
+
+---
+
+© 2025 NativeMind. Все права защищены. | สงวนลิขสิทธิ์

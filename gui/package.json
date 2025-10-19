@@ -1,9 +1,10 @@
 {
   "name": "gui",
+  "displayName": "Продолжи, старец! GUI",
   "private": true,
   "type": "module",
-  "author": "Continue Dev, Inc",
-  "license": "Apache-2.0",
+  "author": "NativeMind",
+  "license": "NativeMindNONC",
   "scripts": {
     "dev": "vite",
     "tsc:check": "tsc -p ./ --noEmit",
