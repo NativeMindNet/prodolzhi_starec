@@ -1,27 +1,27 @@
 {
-  "name": "continue",
+  "name": "prodolzhi-starets",
   "icon": "media/icon.png",
-  "author": "Continue Dev, Inc",
-  "version": "1.3.20",
+  "author": "NativeMind",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/continuedev/continue"
+    "url": "https://github.com/nativemind/prodolzhi-starets"
   },
   "extensionKind": [
     "ui",
     "workspace"
   ],
   "bugs": {
-    "url": "https://github.com/continuedev/continue/issues",
-    "email": "nate@continue.dev"
+    "url": "https://github.com/nativemind/prodolzhi-starets/issues",
+    "email": "contact@nativemind.net"
   },
-  "homepage": "https://continue.dev",
-  "qna": "https://github.com/continuedev/continue/issues/new/choose",
-  "license": "Apache-2.0",
-  "displayName": "Continue - open-source AI code agent",
+  "homepage": "https://nativemind.net/prodolzhi-starets",
+  "qna": "https://github.com/nativemind/prodolzhi-starets/issues/new/choose",
+  "license": "NativeMindNONC",
+  "displayName": "Продолжи, старец! - AI ассистент для разработчиков",
   "pricing": "Free",
-  "description": "The leading open-source AI code agent",
-  "publisher": "Continue",
+  "description": "AI-ассистент с поддержкой русского и тайского языков | ผู้ช่วย AI รองรับภาษารัสเซียและไทย",
+  "publisher": "NativeMind",
   "engines": {
     "vscode": "^1.70.0",
     "node": ">=20.19.0"
