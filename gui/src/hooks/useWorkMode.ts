@@ -22,14 +22,14 @@ const MODES: WorkMode[] = ['developer', 'lawyer', 'seller'];
 export function useWorkMode() {
   const { language } = useLanguage();
   const [mode, setModeState] = useState<WorkMode>(() => {
-    const saved = localStorage.getItem('prodolzhi_starets_mode') as WorkMode;
+    const saved = localStorage.getItem('sdelay_starets_mode') as WorkMode;
     return saved && MODES.includes(saved) ? saved : 'developer';
   });
 
   useEffect(() => {
     // Listen for changes from other tabs/windows
     const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'prodolzhi_starets_mode' && e.newValue) {
+      if (e.key === 'sdelay_starets_mode' && e.newValue) {
         const newMode = e.newValue as WorkMode;
         if (MODES.includes(newMode)) {
           setModeState(newMode);
@@ -44,7 +44,7 @@ export function useWorkMode() {
   const setMode = (newMode: WorkMode) => {
     if (MODES.includes(newMode)) {
       setModeState(newMode);
-      localStorage.setItem('prodolzhi_starets_mode', newMode);
+      localStorage.setItem('sdelay_starets_mode', newMode);
       
       // Dispatch custom event for other components
       window.dispatchEvent(new CustomEvent('modechange', { detail: { mode: newMode } }));
@@ -129,7 +129,7 @@ export function useWorkMode() {
 function getSystemPrompt(mode: WorkMode, language: 'ru' | 'th'): string {
   const prompts = {
     developer: {
-      ru: `Ты опытный разработчик-наставник "Продолжи, старец!". Твоя задача - помогать в написании качественного кода, рефакторинге, отладке и архитектурных решениях.
+      ru: `Ты опытный разработчик-наставник "Сделай, Старец!". Твоя задача - помогать в написании качественного кода, рефакторинге, отладке и архитектурных решениях.
 
 Принципы работы:
 - Объясняй концепции просто и понятно
@@ -163,7 +163,7 @@ function getSystemPrompt(mode: WorkMode, language: 'ru' | 'th'): string {
 5. ช่วยในการทดสอบและเอกสาร`
     },
     lawyer: {
-      ru: `Ты мудрый юридический консультант и помощник в жизненных ситуациях "Продолжи, старец!". Твоя миссия - помочь человеку понять его ситуацию и найти лучшие решения.
+      ru: `Ты мудрый юридический консультант и помощник в жизненных ситуациях "Сделай, Старец!". Твоя миссия - помочь человеку понять его ситуацию и найти лучшие решения.
 
 Принципы работы:
 - Задавай уточняющие вопросы для глубокого понимания
@@ -211,7 +211,7 @@ function getSystemPrompt(mode: WorkMode, language: 'ru' | 'th'): string {
 6. แนะนำผู้เชี่ยวชาญเมื่อจำเป็น`
     },
     seller: {
-      ru: `Ты опытный консультант по продажам "Продолжи, старец!", который работает через понимание и закрытие настоящих потребностей клиента.
+      ru: `Ты опытный консультант по продажам "Сделай, Старец!", который работает через понимание и закрытие настоящих потребностей клиента.
 
 Философия продаж:
 - Продажа - это помощь клиенту решить его проблему
@@ -288,4 +288,5 @@ function getSystemPrompt(mode: WorkMode, language: 'ru' | 'th'): string {
 
   return prompts[mode][language];
 }
+
 

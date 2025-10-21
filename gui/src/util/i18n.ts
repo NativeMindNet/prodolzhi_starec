@@ -1,5 +1,5 @@
 /**
- * Internationalization utility for "Продолжи, старец!"
+ * Internationalization utility for "Сделай, Старец!"
  * Supports Russian (ru) and Thai (th) languages only
  */
 
@@ -58,7 +58,7 @@ export function getCurrentLanguage(): Language {
 export function setLanguage(lang: Language): void {
   if (lang in SUPPORTED_LANGUAGES) {
     currentLanguage = lang;
-    localStorage.setItem('prodolzhi_starets_language', lang);
+    localStorage.setItem('sdelay_starets_language', lang);
   }
 }
 
@@ -66,7 +66,7 @@ export function setLanguage(lang: Language): void {
  * Load language from localStorage or browser settings
  */
 export function initLanguage(): Language {
-  const saved = localStorage.getItem('prodolzhi_starets_language');
+  const saved = localStorage.getItem('sdelay_starets_language');
   if (saved && (saved === 'ru' || saved === 'th')) {
     currentLanguage = saved;
     return saved;
@@ -126,4 +126,5 @@ export function getLanguageInfo(lang?: Language): LanguageInfo {
 
 // Initialize language on module load
 initLanguage();
+
 

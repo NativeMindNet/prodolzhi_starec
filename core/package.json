@@ -1,7 +1,7 @@
 {
-  "name": "@nativemind/prodolzhi-starets-core",
+  "name": "@nativemind/sdelay-starets-core",
   "version": "1.0.0",
-  "description": "Ядро Продолжи, старец! содержит функциональность для web, VS Code и Node.js | แกนกลางของ ดำเนินต่อไปเถิด พ่อแก่! มีฟังก์ชันสำหรับ web, VS Code และ Node.js",
+  "description": "Ядро Сделай, Старец! содержит функциональность для web, VS Code и Node.js | แกนกลางของ ดำเนินต่อไปเถิด พ่อแก่! มีฟังก์ชันสำหรับ web, VS Code และ Node.js",
   "scripts": {
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "vitest": "vitest run",

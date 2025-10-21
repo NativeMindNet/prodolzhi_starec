@@ -32,7 +32,7 @@ export function ModeSelector({ value, onChange, className = '' }: ModeSelectorPr
 
   useEffect(() => {
     // Load saved mode from localStorage
-    const saved = localStorage.getItem('prodolzhi_starets_mode') as WorkMode;
+    const saved = localStorage.getItem('sdelay_starets_mode') as WorkMode;
     if (saved && MODES.includes(saved)) {
       setSelectedMode(saved);
       onChange?.(saved);
@@ -41,7 +41,7 @@ export function ModeSelector({ value, onChange, className = '' }: ModeSelectorPr
 
   const handleModeChange = (mode: WorkMode) => {
     setSelectedMode(mode);
-    localStorage.setItem('prodolzhi_starets_mode', mode);
+    localStorage.setItem('sdelay_starets_mode', mode);
     onChange?.(mode);
     setIsOpen(false);
   };
@@ -165,7 +165,7 @@ export function CompactModeSelector({ value, onChange }: ModeSelectorProps) {
 
   const handleModeChange = (mode: WorkMode) => {
     setSelectedMode(mode);
-    localStorage.setItem('prodolzhi_starets_mode', mode);
+    localStorage.setItem('sdelay_starets_mode', mode);
     onChange?.(mode);
   };
 
@@ -208,13 +208,13 @@ export function CompactModeSelector({ value, onChange }: ModeSelectorProps) {
 // Hook for using mode in components
 export function useWorkMode() {
   const [mode, setMode] = useState<WorkMode>(() => {
-    const saved = localStorage.getItem('prodolzhi_starets_mode') as WorkMode;
+    const saved = localStorage.getItem('sdelay_starets_mode') as WorkMode;
     return saved && MODES.includes(saved) ? saved : 'developer';
   });
 
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'prodolzhi_starets_mode' && e.newValue) {
+      if (e.key === 'sdelay_starets_mode' && e.newValue) {
         const newMode = e.newValue as WorkMode;
         if (MODES.includes(newMode)) {
           setMode(newMode);
@@ -228,7 +228,7 @@ export function useWorkMode() {
 
   const setWorkMode = (newMode: WorkMode) => {
     setMode(newMode);
-    localStorage.setItem('prodolzhi_starets_mode', newMode);
+    localStorage.setItem('sdelay_starets_mode', newMode);
   };
 
   return { mode, setMode: setWorkMode };
@@ -282,4 +282,5 @@ export const getModeCapabilities = (mode: WorkMode): string[] => {
 
   return capabilities[mode];
 };
+
 

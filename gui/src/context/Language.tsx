@@ -1,5 +1,5 @@
 /**
- * Language Context Provider for "Продолжи, старец!"
+ * Language Context Provider for "Сделай, Старец!"
  */
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
@@ -86,4 +86,5 @@ export function LanguageSwitcher() {
 
 // Export type for use in other components
 export type { Language, LanguageInfo };
+
 

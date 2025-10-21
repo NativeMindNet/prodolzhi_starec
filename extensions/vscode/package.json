@@ -1,24 +1,24 @@
 {
-  "name": "prodolzhi-starets",
+  "name": "sdelay-starets",
   "icon": "media/icon.png",
   "author": "NativeMind",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nativemind/prodolzhi-starets"
+    "url": "https://github.com/nativemind/sdelay-starets"
   },
   "extensionKind": [
     "ui",
     "workspace"
   ],
   "bugs": {
-    "url": "https://github.com/nativemind/prodolzhi-starets/issues",
+    "url": "https://github.com/nativemind/sdelay-starets/issues",
     "email": "contact@nativemind.net"
   },
-  "homepage": "https://nativemind.net/prodolzhi-starets",
-  "qna": "https://github.com/nativemind/prodolzhi-starets/issues/new/choose",
+  "homepage": "https://nativemind.net/sdelay-starets",
+  "qna": "https://github.com/nativemind/sdelay-starets/issues/new/choose",
   "license": "NativeMindNONC",
-  "displayName": "Продолжи, старец! - AI ассистент для разработчиков",
+  "displayName": "Сделай, Старец! - AI ассистент для разработчиков",
   "pricing": "Free",
   "description": "AI-ассистент с поддержкой русского и тайского языков | ผู้ช่วย AI รองรับภาษารัสเซียและไทย",
   "publisher": "NativeMind",
