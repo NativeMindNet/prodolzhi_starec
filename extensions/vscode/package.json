@@ -1,11 +1,11 @@
 {
-  "name": "sdelay-starets",
+  "name": "starets-pozhaluysta-sdelay",
   "icon": "media/icon.png",
   "author": "NativeMind",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nativemind/sdelay-starets"
+    "url": "https://github.com/nativemind/starets-pozhaluysta-sdelay"
   },
   "extensionKind": [
     "ui",
@@ -15,12 +15,12 @@
     "url": "https://github.com/nativemind/sdelay-starets/issues",
     "email": "contact@nativemind.net"
   },
-  "homepage": "https://nativemind.net/sdelay-starets",
-  "qna": "https://github.com/nativemind/sdelay-starets/issues/new/choose",
+  "homepage": "https://nativemind.net/starets-pozhaluysta-sdelay",
+  "qna": "https://github.com/nativemind/starets-pozhaluysta-sdelay/issues/new/choose",
   "license": "NativeMindNONC",
-  "displayName": "Сделай, Старец! - AI ассистент для разработчиков",
+  "displayName": "Старец, пожалуйста, сделай - AI ассистент для разработчиков",
   "pricing": "Free",
-  "description": "AI-ассистент с поддержкой русского и тайского языков | ผู้ช่วย AI รองรับภาษารัสเซียและไทย",
+  "description": "AI-ассистент с поддержкой русского и тайского языков | ผู้ช่วย AI รองรับภาษารัสเซียและไทย (พ่อแก่ กรุณา ทำให้)",
   "publisher": "NativeMind",
   "engines": {
     "vscode": "^1.70.0",
