@@ -108,7 +108,7 @@ export const ADDITIONAL_INDEXING_IGNORE_FILETYPES = [
   "*.mp4",
   "*.svg",
   "*.ico",
-  "*.pdf",
+  "*.pdf", // PDF файлы игнорируются для обычной индексации, но обрабатываются в legal-docs
   "*.zip",
   "*.gz",
   "*.tar",

@@ -21,6 +21,7 @@ import GoogleContextProvider from "./GoogleContextProvider";
 import GreptileContextProvider from "./GreptileContextProvider";
 import HttpContextProvider from "./HttpContextProvider";
 import JiraIssuesContextProvider from "./JiraIssuesContextProvider/";
+import LegalDocsContextProvider from "./LegalDocsContextProvider";
 import MCPContextProvider from "./MCPContextProvider";
 import OpenFilesContextProvider from "./OpenFilesContextProvider";
 import OSContextProvider from "./OSContextProvider";
@@ -55,6 +56,7 @@ export const Providers: (typeof BaseContextProvider)[] = [
   ProblemsContextProvider,
   FolderContextProvider,
   DocsContextProvider,
+  LegalDocsContextProvider, // Юридические документы - духовная миссия поиска истины
   GitLabMergeRequestContextProvider,
   JiraIssuesContextProvider,
   PostgresContextProvider,

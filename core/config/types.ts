@@ -804,6 +804,7 @@ declare global {
     | "database"
     | "code"
     | "docs"
+    | "legal" // Юридические документы - духовная миссия поиска истины
     | "gitlab-mr"
     | "os"
     | "currentFile"
