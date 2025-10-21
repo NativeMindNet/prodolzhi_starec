@@ -1,5 +1,7 @@
 import { IndexTag, IndexingProgressUpdate } from "../index.js";
 
+export type { IndexTag, IndexingProgressUpdate };
+
 export enum IndexResultType {
   Compute = "compute",
   Delete = "del",

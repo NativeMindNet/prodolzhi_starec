@@ -7,27 +7,28 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { DatabaseConnection, SqliteDb } from "../indexing/refreshIndex";
 import {
-    CodebaseIndex,
-    IndexResultType,
-    IndexTag,
-    IndexingProgressUpdate,
-    MarkCompleteCallback,
-    RefreshIndexResults,
+  CodebaseIndex,
+  IndexResultType,
+  IndexTag,
+  IndexingProgressUpdate,
+  MarkCompleteCallback,
+  RefreshIndexResults,
 } from "../indexing/types";
 import { BaseLLM } from "../llm";
 import { DocumentComparisonService } from "./DocumentComparisonService";
 import { PdfProcessor } from "./PdfProcessor";
 import {
-    LegalDocsConfig,
-    LegalPage,
-    LegalSearchQuery,
-    LegalSearchResult,
-    LegalVolume
+  LegalDocsConfig,
+  LegalPage,
+  LegalSearchQuery,
+  LegalSearchResult,
+  LegalVolume,
 } from "./types";
 
 export class LegalDocsIndex implements CodebaseIndex {
+  artifactId: string = "legal-docs-index";
   relativeExpectedTime: number = 5.0; // Индексация PDF занимает много времени
-  
+
   private pdfProcessor: PdfProcessor;
   private comparisonService: DocumentComparisonService;
   private config: LegalDocsConfig;
@@ -182,7 +183,7 @@ export class LegalDocsIndex implements CodebaseIndex {
 
     // Находим все PDF файлы
     const pdfFiles = this.findPdfFiles(volumesDir);
-    
+
     yield {
       progress: 0.1,
       desc: `Найдено томов: ${pdfFiles.length}`,
@@ -245,7 +246,7 @@ export class LegalDocsIndex implements CodebaseIndex {
         );
       } catch (error) {
         console.error(`Ошибка обработки ${pdfPath}:`, error);
-        
+
         await db.run(
           `UPDATE legal_volumes 
            SET indexing_status = 'error',
@@ -291,7 +292,10 @@ export class LegalDocsIndex implements CodebaseIndex {
 
         if (entry.isDirectory()) {
           scan(fullPath);
-        } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".pdf")) {
+        } else if (
+          entry.isFile() &&
+          entry.name.toLowerCase().endsWith(".pdf")
+        ) {
           files.push(fullPath);
         }
       }
@@ -404,7 +408,7 @@ export class LegalDocsIndex implements CodebaseIndex {
    */
   async getSuspiciousComparisons(): Promise<any[]> {
     const db = await SqliteDb.get();
-    
+
     return await db.all(`
       SELECT *
       FROM legal_comparisons
@@ -446,4 +450,3 @@ export class LegalDocsIndex implements CodebaseIndex {
     };
   }
 }
-

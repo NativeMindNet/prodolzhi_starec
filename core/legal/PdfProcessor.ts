@@ -11,11 +11,11 @@ import { fromPath } from "pdf2pic";
 import { createWorker, Worker as TesseractWorker } from "tesseract.js";
 import { BaseLLM } from "../llm";
 import {
-    LegalIndexingProgress,
-    LegalPage,
-    LegalVolume,
-    MultimodalAnalysisResult,
-    OCRResult,
+  LegalIndexingProgress,
+  LegalPage,
+  LegalVolume,
+  MultimodalAnalysisResult,
+  OCRResult,
 } from "./types";
 
 export class PdfProcessor {
@@ -25,10 +25,7 @@ export class PdfProcessor {
   private thumbnailsDir: string;
   private textCacheDir: string;
 
-  constructor(
-    cacheBaseDir: string,
-    multimodalModel?: BaseLLM,
-  ) {
+  constructor(cacheBaseDir: string, multimodalModel?: BaseLLM) {
     this.cacheDir = path.join(cacheBaseDir, "legal-docs");
     this.thumbnailsDir = path.join(this.cacheDir, "thumbnails");
     this.textCacheDir = path.join(this.cacheDir, "text-cache");
@@ -213,7 +210,10 @@ export class PdfProcessor {
         processingTime: Date.now() - startTime,
       };
     } catch (error) {
-      console.error(`Ошибка извлечения текста со страницы ${pageNumber}:`, error);
+      console.error(
+        `Ошибка извлечения текста со страницы ${pageNumber}:`,
+        error,
+      );
       return {
         text: "",
         confidence: 0,
@@ -243,7 +243,9 @@ export class PdfProcessor {
     const convert = fromPath(pdfPath, options);
     const result = await convert(pageNumber, { responseType: "image" });
 
-    return result.path;
+    return (
+      result.path || path.join(this.thumbnailsDir, `page_${pageNumber}.png`)
+    );
   }
 
   /**
@@ -295,7 +297,7 @@ export class PdfProcessor {
   /**
    * Обработать весь том (все страницы)
    */
-  async* processVolume(
+  async *processVolume(
     volume: LegalVolume,
     useOcr: boolean = true,
     useMultimodal: boolean = false,
@@ -395,4 +397,3 @@ export class PdfProcessor {
     clearDir(this.thumbnailsDir);
   }
 }
-
