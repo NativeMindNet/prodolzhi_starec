@@ -1,0 +1,77 @@
+# Юридические документы - Духовная миссия поиска истины
+# "Старец, пожалуйста, сделай" - Поиск решений суда
+
+legal_docs:
+  # Включить функциональность
+  enabled: true
+
+  # Папка с томами дел (укажите свой путь)
+  volumes_directory: "./дела/судебные-решения"
+
+  # Настройки индексации
+  indexing:
+    enable_ocr: true # OCR для сканов
+    ocr_language: "rus" # Русский язык
+    batch_size: 10 # Страниц за раз
+    max_cache_size: 50 # ГБ кэша
+    background_indexing: true # Фоновая индексация
+
+  # Настройки поиска
+  search:
+    default_results: 10 # Количество результатов
+    enable_reranking: true # Reranking
+    context_pages: 3 # Страниц контекста
+
+  # Обнаружение копипаста
+  comparison:
+    suspicious_text_threshold: 70 # Порог текста (%)
+    suspicious_visual_threshold: 70 # Порог визуала (%)
+    min_match_length: 100 # Мин. длина фрагмента
+
+  # Производительность
+  performance:
+    parallel_processing: 4 # Потоков
+
+  # Мультимодальная модель
+  multimodal_model: "MOZGACH108"
+
+# Модели для анализа
+models:
+  - title: "MOZGACH108"
+    provider: "openai"
+    model: "gpt-4-vision-preview"
+    apiKey: "your-api-key-here"
+
+# Настройки для поиска решений суда
+court_decisions:
+  # Типы документов для поиска
+  document_types:
+    - "решение суда"
+    - "приговор"
+    - "определение"
+    - "постановление"
+    - "апелляционное определение"
+    - "кассационное определение"
+
+  # Ключевые слова для поиска решений
+  keywords:
+    - "суд постановил"
+    - "суд решил"
+    - "суд определил"
+    - "приговор"
+    - "решение"
+    - "постановление"
+    - "определение"
+    - "апелляция"
+    - "кассация"
+
+  # Структура поиска
+  search_structure:
+    case_number: true # Номер дела
+    date: true # Дата решения
+    court_name: true # Название суда
+    judge: true # Судья
+    parties: true # Стороны
+    decision: true # Решение
+    reasoning: true # Мотивировочная часть
+

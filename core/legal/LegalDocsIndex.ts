@@ -15,9 +15,13 @@ import {
   RefreshIndexResults,
 } from "../indexing/types";
 import { BaseLLM } from "../llm";
+import { CourtDecisionService } from "./CourtDecisionService";
 import { DocumentComparisonService } from "./DocumentComparisonService";
 import { PdfProcessor } from "./PdfProcessor";
 import {
+  CourtDecisionConfig,
+  CourtDecisionResult,
+  CourtDecisionSearchQuery,
   LegalDocsConfig,
   LegalPage,
   LegalSearchQuery,
@@ -31,20 +35,28 @@ export class LegalDocsIndex implements CodebaseIndex {
 
   private pdfProcessor: PdfProcessor;
   private comparisonService: DocumentComparisonService;
+  private courtDecisionService: CourtDecisionService;
   private config: LegalDocsConfig;
+  private courtDecisionConfig: CourtDecisionConfig;
   private multimodalModel?: BaseLLM;
 
   constructor(
     cacheDir: string,
     config: LegalDocsConfig,
+    courtDecisionConfig: CourtDecisionConfig,
     multimodalModel?: BaseLLM,
   ) {
     this.config = config;
+    this.courtDecisionConfig = courtDecisionConfig;
     this.multimodalModel = multimodalModel;
     this.pdfProcessor = new PdfProcessor(cacheDir, multimodalModel);
     this.comparisonService = new DocumentComparisonService(
       multimodalModel,
       this.pdfProcessor,
+    );
+    this.courtDecisionService = new CourtDecisionService(
+      courtDecisionConfig,
+      multimodalModel,
     );
   }
 
@@ -448,5 +460,58 @@ export class LegalDocsIndex implements CodebaseIndex {
       indexedVolumes: volumeStats?.indexed || 0,
       suspiciousComparisons: comparisonStats?.suspicious || 0,
     };
+  }
+
+  /**
+   * Поиск решений суда
+   */
+  async searchCourtDecisions(
+    query: CourtDecisionSearchQuery,
+  ): Promise<CourtDecisionResult[]> {
+    return this.courtDecisionService.searchDecisions(query);
+  }
+
+  /**
+   * Поиск решений по ключевым словам
+   */
+  async searchDecisionsByKeywords(
+    keywords: string[],
+  ): Promise<CourtDecisionResult[]> {
+    return this.courtDecisionService.searchByKeywords(keywords);
+  }
+
+  /**
+   * Поиск решений по номеру дела
+   */
+  async searchDecisionsByCaseNumber(
+    caseNumber: string,
+  ): Promise<CourtDecisionResult[]> {
+    return this.courtDecisionService.searchByCaseNumber(caseNumber);
+  }
+
+  /**
+   * Поиск решений по дате
+   */
+  async searchDecisionsByDateRange(
+    startDate: Date,
+    endDate: Date,
+  ): Promise<CourtDecisionResult[]> {
+    return this.courtDecisionService.searchByDateRange(startDate, endDate);
+  }
+
+  /**
+   * Поиск решений по суду
+   */
+  async searchDecisionsByCourt(
+    courtName: string,
+  ): Promise<CourtDecisionResult[]> {
+    return this.courtDecisionService.searchByCourt(courtName);
+  }
+
+  /**
+   * Поиск решений по судье
+   */
+  async searchDecisionsByJudge(judge: string): Promise<CourtDecisionResult[]> {
+    return this.courtDecisionService.searchByJudge(judge);
   }
 }

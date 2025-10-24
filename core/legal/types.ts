@@ -186,7 +186,14 @@ export interface MultimodalAnalysisResult {
 }
 
 export type LegalIndexingProgress = {
-  status: "idle" | "scanning" | "ocr" | "embedding" | "analyzing" | "completed" | "error";
+  status:
+    | "idle"
+    | "scanning"
+    | "ocr"
+    | "embedding"
+    | "analyzing"
+    | "completed"
+    | "error";
   currentVolume?: number;
   currentPage?: number;
   totalVolumes: number;
@@ -241,3 +248,76 @@ export interface LegalDocsConfig {
   multimodalModel: string; // "MOZGACH108" или другая
 }
 
+/** Конфигурация для поиска решений суда */
+export interface CourtDecisionConfig {
+  /** Типы документов для поиска */
+  documentTypes: string[];
+  /** Ключевые слова для поиска решений */
+  keywords: string[];
+  /** Структура поиска */
+  searchStructure: {
+    caseNumber: boolean;
+    date: boolean;
+    courtName: boolean;
+    judge: boolean;
+    parties: boolean;
+    decision: boolean;
+    reasoning: boolean;
+  };
+}
+
+/** Результат поиска решения суда */
+export interface CourtDecisionResult {
+  /** ID результата */
+  id: string;
+  /** Номер тома */
+  volumeNumber: number;
+  /** Номер страницы */
+  pageNumber: string;
+  /** Тип документа */
+  documentType: string;
+  /** Номер дела */
+  caseNumber?: string;
+  /** Дата решения */
+  decisionDate?: Date;
+  /** Название суда */
+  courtName?: string;
+  /** Судья */
+  judge?: string;
+  /** Стороны дела */
+  parties?: {
+    plaintiff?: string;
+    defendant?: string;
+    prosecutor?: string;
+  };
+  /** Решение суда */
+  decision?: string;
+  /** Мотивировочная часть */
+  reasoning?: string;
+  /** Полный текст документа */
+  fullText: string;
+  /** Релевантность (0-1) */
+  relevance: number;
+  /** Путь к изображению */
+  imagePath?: string;
+}
+
+/** Запрос поиска решения суда */
+export interface CourtDecisionSearchQuery {
+  /** Текст запроса */
+  query?: string;
+  /** Номер дела */
+  caseNumber?: string;
+  /** Диапазон дат */
+  dateRange?: [Date, Date];
+  /** Название суда */
+  courtName?: string;
+  /** Судья */
+  judge?: string;
+  /** Тип документа */
+  documentType?: string;
+  /** Номера томов для поиска */
+  volumeNumbers?: number[];
+  /** Количество результатов */
+  limit?: number;
+}
